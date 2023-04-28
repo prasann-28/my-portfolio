@@ -26,8 +26,13 @@ const Skills = () => {
             </p>
             <LineGradient width='w-1/3'></LineGradient>
             <p className='mt-10 mb-7'>
-            Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-            fames odio in at.
+            With my previous learning and practice, I have acquired a few skills in 
+            <ul className='pl-5'>
+              <li>Web Development</li>
+              <li>Machine Learning and AI</li>
+              <li>Mobile Application Development</li>
+            </ul>
+            and a few more . While I am eager to learn more in these, I am keen to learn new stuff. Below are a few of what I have used the most
 
             </p>
             </motion.div>
@@ -74,15 +79,13 @@ const Skills = () => {
             <div className="z-10">
               <p className="font-opensans font-semibold text-5xl">01</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                Web Development
+                Languages
               </p>
             </div>
             <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            A auctor pharetra hendrerit mattis amet etiam interdum platea. Est
-            morbi porttitor scelerisque fermentum, sagittis non egestas. Amet
-            odio sit sagittis,
+            Python, C/C++, HTML, CSS, Javascript, Typescript, SQL, MongoDB, Dart, R, Java, Solidity...
           </p>
         </motion.div>
         {/* INNOVATIVE */}
@@ -101,16 +104,13 @@ const Skills = () => {
             <div className="z-10">
               <p className="font-opensans font-semibold text-5xl">02</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                Machine Learning and Artificial Intelligence
+                Frameworks and Packages
               </p>
             </div>
             <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
-            amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-            nulla amet habitant iaculis. Iaculis in congue vitae sollicitudin
-            faucibus a
+            React, Flutter, Scikit-learn, Tensorflow, Numpy, Pandas, Matplotlib, Seaborn, Flask, Django, PySpark, Truffle...
           </p>
         </motion.div>
         {/* IMAGINATIVE */}
@@ -129,18 +129,39 @@ const Skills = () => {
             <div className="z-10">
               <p className="font-opensans font-semibold text-5xl">03</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                Other Skills
+                Miscellaneous
               </p>
             </div>
             <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            Accumsan eu fringilla nisi, eget. Vitae, eget ut id proin arcu in
-            curabitur. Lectus libero, egestas enim aliquam quis felis amet.
-            Sagittis, amet netus fringilla netus lobortis odio sed platea.
-            Bibendum.
+            Tableau, AWS, GCP, Git/Github, Docker...
           </p>
         </motion.div>
+        {/* <motion.div
+          className="md:w-1/3 mt-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
+          <div className="relative h-32">
+            <div className="z-10">
+              <p className="font-opensans font-semibold text-5xl">04</p>
+              <p className="font-playfair font-semibold text-3xl mt-3">
+                Certifications
+              </p>
+            </div>
+            <div className="w-1/2 md:w-3/4 h-32 bg-black absolute right-0 top-0 z-[-1]" />
+          </div>
+          <p className="mt-5">
+            Tableau, AWS, GCP, Git/Github, Docker...
+          </p>
+        </motion.div> */}
         </div>
              </section>
   )

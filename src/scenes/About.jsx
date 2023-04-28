@@ -38,7 +38,7 @@ const About = () => {
             }}
             className='text-2xl font-playfair font-semibold'>
               I am learning:
-              <div className='text-4xl text-deep-blue font-opensans py-10'>
+              <div className='text-4xl text-blue font-opensans py-10'>
               <Typewriter
               options={{
               strings: ['Software Development ...', 'Machine Learning ...', 'Website Development ...', "Mobile Application Development ..."],
