@@ -3,9 +3,17 @@ import LineGradient from '../components/LineGradient'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { motion } from 'framer-motion'
 import skills from '../assets/skills-image.png'
+import testdoc from '../assets/certificates/accenture virtual internship.pdf'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const Skills = () => {
-    const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
+  const importCertificates = (r) => {
+    return r.keys().map(r);
+  }
+
+  const images = importCertificates(require.context('../assets/certificates', false, /\.(png|pdf)$/));
   return (
     <section id="skills" className="pt-5 pb-24">
       {/* HEADER AND IMAGE SECTION */}
@@ -43,19 +51,31 @@ const Skills = () => {
               className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
               before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]"
             >
-              <img
-                alt="skills"
-                className="z-10"
-                src={skills}
-              />
-            </div>
+
+      <Carousel autoPlay dynamicHeight infiniteLoop duration={30} showArrows={false} showIndicators={false} showStatus={false} showThumbs={false} width={'45em'}>
+              {images.map( image => 
+                (
+                
+                  <img
+                  alt="skills"
+                  height={'30em'}
+                  className="z-10 bg-white"
+                  src={image}
+                  />))}
+              </Carousel>
+              </div>
+              
                 ) : 
-                (                   
-                    <img
-                    alt="skills"
-                    className="z-10"
-                    src={skills}
-                  />
+                (   
+                  <Carousel autoPlay dynamicHeight infiniteLoop duration={30} showArrows={false} showIndicators={false} showStatus={false} showThumbs={false}>
+                    {images.map( image => 
+                (
+                  <img
+                  alt="skills"
+                  className="z-10 bg-white"
+                  src={image}
+                  />))}
+                  </Carousel>                
                 )}
 
             </div>

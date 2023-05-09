@@ -17,8 +17,8 @@ const About = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{staggerChildren: 0.2 }}
             variants={{
-              hidden: { opacity: 0, x: 0, scale:1.5 },
-              visible: { opacity: 1, x: 0, scale:1 },
+              hidden: { opacity: 0, x: -50},
+              visible: { opacity: 1, x: 0 },
             }}
             className='font-playfair text-6xl text-white font-semibold'>
               About Me,
@@ -41,7 +41,7 @@ const About = () => {
               <div className='text-4xl text-blue font-opensans py-10'>
               <Typewriter
               options={{
-              strings: ['Software Development ...', 'Machine Learning ...', 'Website Development ...', "Mobile Application Development ..."],
+              strings: ['Software Development', 'Machine Learning', 'Website Development', "Mobile Application Development"],
               autoStart: true,
               loop: true,
               }}
@@ -66,7 +66,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay:0.2,duration: 0.5 }}
+            transition={{ delay:0.2,duration: 0. }}
             variants={{
               hidden: { opacity: 0, x:50 },
               visible: { opacity: 1, x:0 },
@@ -78,7 +78,7 @@ const About = () => {
                 <div className='flex flex-col items-baseline'>
                 <h1 className='font-playfair text-blue font-semibold text-xl ' >College of Engineering, Pune</h1>
                 <ul className='text-xs font-opensans'>
-                  <li className='text-red'>Post Graduate Diploma in <span className='text-white'> Data Science and Artificial Intelligence</span></li>
+                  <li className='text-red text-xs' >Post Graduate Diploma in <span className='text-white'> Data Science and Artificial Intelligence</span></li>
 
                 </ul>
                 </div>
@@ -102,7 +102,7 @@ const About = () => {
                 <div className='flex flex-col items-baseline'>
                 <h1 className='font-playfair text-blue font-semibold text-xl ' >Savitribai Phule Pune University</h1>
                 <ul className='text-xs font-opensans'>
-                <li className='text-red'>Bachelor of  <span className='text-white'>Computer</span> Engineering with Honors in Cybersecurity</li>
+                <li className='text-red text-xs'>Bachelor of  <span className='text-white'>Computer</span> Engineering with Honors in Cybersecurity</li>
                   <li>CGPA: 9.49/10</li>
                   <li>Ranked 3rd in final year</li>
 

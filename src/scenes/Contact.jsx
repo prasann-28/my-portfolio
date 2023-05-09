@@ -78,7 +78,7 @@ const Contact = () => {
             <input
               className="w-full bg-blue rounded-sm placeholder-opaque-black p-3"
               type="text"
-              placeholder="NAME"
+              placeholder="Name"
               {...register("name", {
                 required: true,
                 maxLength: 100,
@@ -94,7 +94,7 @@ const Contact = () => {
             <input
               className="w-full bg-blue rounded-sm  placeholder-opaque-black p-3 mt-5"
               type="text"
-              placeholder="EMAIL"
+              placeholder="Email"
               {...register("email", {
                 required: true,
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -110,7 +110,7 @@ const Contact = () => {
             <textarea
               className="w-full bg-blue rounded-sm  placeholder-opaque-black p-3 mt-5"
               name="message"
-              placeholder="MESSAGE"
+              placeholder="Message"
               rows="4"
               cols="50"
               {...register("message", {
@@ -131,7 +131,7 @@ const Contact = () => {
               className="p-5 bg-yellow rounded-sm text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
               type="submit"
             >
-              SEND ME A MESSAGE
+              Send me a Message
             </button>
           </form>
         </motion.div>
