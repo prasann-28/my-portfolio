@@ -1,13 +1,14 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
-import project1 from '../assets/project-1.jpeg'
-import project2 from '../assets/project-2.jpeg'
-import project3 from '../assets/project-3.jpeg'
-import project4 from '../assets/project-4.jpeg'
-import project5 from '../assets/project-5.jpeg'
-import project6 from '../assets/project-6.jpeg'
-import project7 from '../assets/project-7.jpeg'
-import bgVideo from '../assets/bg-vid.mp4'
+import project1 from '../assets/projects/knox-chat.gif'
+import project2 from '../assets/projects/flash-chat.gif'
+import project3 from '../assets/projects/election.gif'
+import project4 from '../assets/projects/bitmoji.gif'
+import project5 from '../assets/projects/getflix.gif'
+import project6 from '../assets/projects/taxi.gif'
+import project7 from '../assets/projects/stellar.gif'
+import project8 from '../assets/projects/fruit.gif'
+import project9 from '../assets/projects/sorting.gif'
 
 const container = {
   hidden: {},
@@ -23,37 +24,97 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title }) => {
-  const projectImageMap = {
-    "project1" : project1,
-    "project2" : project2,
-    "project3" : project3,
-    "project4" : project4,
-    "project5" : project5,
-    "project6" : project6,
-    "project7" : project7
-  }
+const Project = ({ title, imgsrc, description, link }) => {
   const overlayStyles = `absolute h-full w-full bg-red text-white opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
-  const projectTitle = title.split(" ").join("").toLowerCase();
-  const projectImage = projectImageMap[projectTitle]
+  const projectLink = link.toString()
 
   return (
     <motion.div variants={projectVariant} className="relative">
-      <div className={overlayStyles}>
+      <div onClick={(projectLink) => window.open({projectLink}, "_blank", 'noopener,noreferrer')} className={overlayStyles}>
         <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7">
-          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-          porttitor accumsan tincidunt.
+        <p className="mt-7" >
+          {description}
         </p>
       </div>
-      {/* <img src={projectImage} alt={projectTitle} /> */}
-      <video src={bgVideo} autoPlay loop ></video>
+
+      <div className="contain justify-center align-">
+      <img className="bg-contain bg-center m-auto p-auto" src={imgsrc} autopPlay loop alt={title} />
+      </div>
     </motion.div>
   );
 };
 
 const Projects = () => {
+
+  const projectMap = [
+    {
+      "name": "Knox Chat",
+      "description": "Knox Chat",
+      link : "https://github.com/prasann-28/knox-chat",
+      img : project1
+
+    },
+    {
+      name: "Flash Chat",
+      description: "Flash Chat",
+      link: "https://github.com/prasann-28/flash-chat",
+      img: project2
+
+    },
+    {
+      name: "SecVote",
+      description: "Decentralized Election",
+      link: "https://github.com/prasann-28/flash-chat",
+      img: project3
+
+    },
+    {
+      name: "Emoji GAN",
+      description: "Decentralized Election",
+      link: "https://github.com/prasann-28/flash-chat",
+      img: project4
+
+    },
+    {
+      name: "GetFlix",
+      description: "GetFlix",
+      link: "https://github.com/prasann-28/flash-chat",
+      img: project5
+
+    },
+    {
+      name: "Taxi Fare Price Prediction",
+      description: "GetFlix",
+      link: "https://github.com/prasann-28/flash-chat",
+      img: project6
+
+    },
+    {
+      name: "Stellar Object Classiification",
+      description: "Sorting Visualizer",
+      link: "https://github.com/prasann-28/flash-chat",
+      img: project7
+
+    },
+    {
+      name: "Fruit Classification",
+      description: "Sorting Visualizer",
+      link: "https://github.com/prasann-28/flash-chat",
+      img: project8
+
+    },
+    {
+      name: "Sorting Visualizer",
+      description: "Sorting Visualizer",
+      link: "https://github.com/prasann-28/flash-chat",
+      img: project9
+
+    }
+    
+    
+  ]
+
   return (
     <section id="projects" className="pt-32 pb-32">
       {/* HEADINGS */}
@@ -99,19 +160,23 @@ const Projects = () => {
           >
             BEAUTIFUL USER INTERFACES
           </div> */}
-          <Project title="Project 1" />
-          <Project title="Project 2" />
+          {projectMap.map((project,idx) => (
+            <Project key={idx} title={project.name} description={project.description} link={project.link} imgsrc={project.img} />
+          ))}
+          
+          
+          {/* <Project title={projectMap['project2'].name} description={projectMap['project2'].description} link={projectMap['project2'].link} imgsrc={projectMap['project2'].img} /> */}
 
           {/* ROW 2 */}
-          <Project title="Project 3" />
-          <Project title="Project 4" />
-          <Project title="Project 5" />
+          {/* <Project title="Project 3" /> */}
+          {/* <Project title="Project 4" /> */}
+          {/* <Project title="Project 5" /> */}
 
           {/* ROW 3 */}
-          <Project title="Project 6" />
+          {/* <Project title="Project 6" />
           <Project title="Project 7" />
           <Project title="Project 8" />
-          <Project title="Project 9" />
+          <Project title="Project 9" /> */}
           {/* <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
@@ -120,6 +185,21 @@ const Projects = () => {
           </div> */}
         </motion.div>
       </div>
+      <motion.div
+        className="md:w-2/5 mx-auto pt-10 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, y: -50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+      >
+        <a href="https://github.com/prasann-28" target="_blank" className=" font-playfair font-bold">
+          And others...
+        </a>
+      </motion.div>
     </section>
   );
 };

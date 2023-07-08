@@ -54,7 +54,7 @@ function App() {
       </div>
       {/* <LineGradient /> */}
       {/* [url('./assets/about-bg.jpg')] */}
-      <div className="bg-[url('./assets/about-bg.jpg')] bg-contain bg-center w-full md:h-fit-content">
+      <div id="about" className="bg-[url('./assets/about-bg.jpg')] bg-contain bg-center w-full md:h-fit-content">
       <div className="w-5/6 mx-auto mb-10 md:h-fit-content">
         <motion.div
           margin="0 0 -200px 0"

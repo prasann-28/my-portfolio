@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section id="about" className='py-28'>
+    <section className='py-28'>
        <div className='flex justify-between'>
         <div className='sm:grid sm:grid-cols-2'>
           {/* Left Column */}
